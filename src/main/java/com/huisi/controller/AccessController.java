@@ -1,6 +1,6 @@
 package com.huisi.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AccessController {
 
-    @PostMapping("/login")
+    @GetMapping("/login")
     public void doLogin() {
-
+        int a = 0;
     }
 }
