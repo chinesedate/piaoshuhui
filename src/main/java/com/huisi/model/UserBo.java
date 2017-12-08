@@ -4,8 +4,17 @@ package com.huisi.model;
  * Created by xuhan on 2017/12/5.
  */
 public class UserBo {
+    private Integer autoId;
     private String userName;
-    private String passWord;
+    private String password;
+
+    public Integer getAutoId() {
+        return autoId;
+    }
+
+    public void setAutoId(Integer autoId) {
+        this.autoId = autoId;
+    }
 
     public String getUserName() {
         return userName;
@@ -15,11 +24,11 @@ public class UserBo {
         this.userName = userName;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
