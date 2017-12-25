@@ -18,4 +18,8 @@ public class UserServiceImpl implements UserService {
     public int insertBo_USER(UserBo userBo) {
         return this.userMapper.insert(userBo);
     }
+
+    public String selectBo_USER(String userName) {
+        return this.userMapper.selectBo(userName);
+    }
 }

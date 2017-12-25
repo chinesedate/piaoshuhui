@@ -19,5 +19,14 @@
         )
     </insert>
 
+    <!-- 查询出用户的密码用户用户登录验证-->
+    <select id="selectBo" resultType="String">
+        SELECT
+        password
+        FROM
+        user
+        where user_name = #{userName}
+    </select>
+
 
 </mapper>

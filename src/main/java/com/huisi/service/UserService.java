@@ -8,4 +8,5 @@ import org.springframework.stereotype.Service;
  */
 public interface UserService {
     int insertBo_USER(UserBo userBo);
+    String selectBo_USER(String userName);
 }

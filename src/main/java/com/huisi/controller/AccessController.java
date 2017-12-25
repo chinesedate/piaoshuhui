@@ -4,6 +4,7 @@ import com.huisi.model.UserBo;
 import com.huisi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,15 +24,31 @@ public class AccessController {
         return "index";
     }
 
-    @PostMapping("/login")
-    public String doLogin(
+    @PostMapping("/signup")
+    public String doSignup(
             @RequestParam("userName") String userName,
             @RequestParam("password") String password
     ) {
         UserBo userBo = new UserBo();
-        userBo.setUserName("testName");
-        userBo.setPassword("123qwe");
+        userBo.setUserName(userName);
+        userBo.setPassword(password);
         userService.insertBo_USER(userBo);
-        return "index";
+        return "content";
+    }
+
+    @PostMapping("/login")
+    public String doLogin(
+            @RequestParam("userName") String userName,
+            @RequestParam("password") String password,
+            ModelMap modelMap
+    ) {
+        String psw = userService.selectBo_USER(userName);
+        if (psw != null && password.equals(psw)) {
+            return "content";
+        } else {
+            modelMap.addAttribute("message", "登录不成功！");
+            return "index";
+        }
+
     }
 }
