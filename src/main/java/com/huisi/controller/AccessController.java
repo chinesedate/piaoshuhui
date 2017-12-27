@@ -21,7 +21,7 @@ public class AccessController {
 
     @GetMapping("/")
     public String index() {
-        return "index";
+        return "content";
     }
 
     @PostMapping("/signup")
